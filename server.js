@@ -8,7 +8,10 @@ require('dotenv').config();
 
 
 const app = express();
-const port = /* process.env.port || */ 6000 ;
+
+const host = '0.0.0.0';
+const port = process.env.PORT || 5000;
+
 
 //middlewares
 app.use(cors());
@@ -86,6 +89,6 @@ app.post('/', (req ,res ) => {
   
 
 
-app.listen(port ,()=>{
+app.listen(port, host ,()=>{
     console.log(`Server is running on port: ${port}`);
 });
